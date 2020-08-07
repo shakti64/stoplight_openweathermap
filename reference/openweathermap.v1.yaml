@@ -256,10 +256,40 @@ paths:
                     id: 0
                     name: Santa Clara
                     cod: 200
+                example-2:
+                  value:
+                    coord >: null
+                    'cod:': '200'
+                    'name:': Cairns
+                    'id:': 2172797
+                    'timezone:': '-28800'
+                    sys >: null
+                    'dt:': '1435658272'
+                    clouds >: null
+                    wind >: null
+                    main >: null
+                    'base:': cmc stations
+                    weather >: null
+                example-3:
+                  value:
+                    coord >: null
+                    'cod:': '200'
+                    'name:': Cairns
+                    'id:': 2172797
+                    'timezone:': '-28800'
+                    sys >: null
+                    'dt:': '1435658272'
+                    clouds >: null
+                    wind >: null
+                    main >: null
+                    'base:': cmc stations
+                    weather >: null
             text/html:
               schema:
                 type: object
                 properties: {}
+        '201':
+          description: Created
         '401':
           description: Unauthorized
           content:
