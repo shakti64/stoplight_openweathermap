@@ -29,6 +29,9 @@ paths:
               schema:
                 type: object
                 properties: {}
+              examples:
+                example-1:
+                  value: {}
             multipart/form-data:
               schema:
                 type: object
@@ -253,6 +256,24 @@ paths:
                     id: 0
                     name: Santa Clara
                     cod: 200
+            text/html:
+              schema:
+                type: object
+                properties: {}
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/unauthorized_response'
+            application/xml:
+              schema:
+                type: object
+                properties: {}
+            multipart/form-data:
+              schema:
+                type: object
+                properties: {}
       operationId: get-weather
       description: 'Access current weather data for any location on Earth including over 200,000 cities! Current weather is frequently updated based on global models and data from more than 40,000 weather stations.'
       security:
@@ -305,7 +326,21 @@ paths:
           name: mode
           description: '**Mode*. *Example: html. Determines the format of the response. Possible values are `json`, `xml`, and `html`. If the mode parameter is empty, the format is `json` by default.'
 components:
-  schemas: {}
+  schemas:
+    unauthorized_response:
+      title: unauthorized_response
+      type: object
+      properties:
+        cod:
+          type:
+            - string
+            - integer
+        message:
+          type: string
+      required:
+        - cod
+        - message
+      description: '401'
   securitySchemes:
     app_id:
       name: appid
